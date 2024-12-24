@@ -8,21 +8,12 @@ import org.firstinspires.ftc.robotcore.external.Telemetry;
 
 @Config
 public class Outtake {
-
     // claw
     private Servo lClaw, rClaw;
     // claw open
-    public static double L_CLAW_OPEN = 0.52, R_CLAW_OPEN = 0.58;
+    public static double L_CLAW_OPEN = 0.525, R_CLAW_OPEN = 0.725;
     // claw close
-    public static double L_CLAW_CLOSE = 0.34, R_CLAW_CLOSE = 0.42;
-
-    // box
-    private Servo box;
-    // box open
-    public static double BOX_OPEN = 0.35;
-    // box close
-    public static double BOX_CLOSE = 0.75;
-
+    public static double L_CLAW_CLOSE = 0.34, R_CLAW_CLOSE = 0.58;
 
     public void initialize(HardwareMap hardwareMap) {
         lClaw = hardwareMap.get(Servo.class, "l-claw-outtake");
@@ -36,12 +27,6 @@ public class Outtake {
         // setting pos
         lClaw.setPosition(L_CLAW_CLOSE);
         rClaw.setPosition(R_CLAW_CLOSE);
-
-        // box
-        box = hardwareMap.get(Servo.class, "box-outtake");
-        box.setDirection(Servo.Direction.FORWARD);
-        box.scaleRange(0, 1);
-        box.setPosition(BOX_CLOSE);
     }
 
     // claw handles
@@ -54,18 +39,8 @@ public class Outtake {
         rClaw.setPosition(R_CLAW_OPEN);
     }
 
-    // box handles
-    public void setBoxCLose() {
-        box.setPosition(BOX_CLOSE);
-    }
-    public void setBoxOpen() {
-        box.setPosition(BOX_OPEN);
-    }
-
     public void showLogs(Telemetry telemetry) {
-        telemetry.addData("box", box.getPosition());
         telemetry.addData("l claw:", lClaw.getPosition());
         telemetry.addData("r claw:", rClaw.getPosition());
     }
-
 }

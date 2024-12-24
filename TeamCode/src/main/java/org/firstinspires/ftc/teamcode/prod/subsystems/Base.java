@@ -89,14 +89,14 @@ public class Base {
 
     // showing telemetry
     public void showTelemetry(Telemetry telemetry) {
-        telemetry.addData("left front power:", lf.getPower());
-        telemetry.addData("right front power:", rf.getPower());
-        telemetry.addData("left rear power:", lr.getPower());
-        telemetry.addData("left rear power:", rr.getPower());
+        telemetry.addData("lf power:", lf.getPower());
+        telemetry.addData("rf power:", rf.getPower());
+        telemetry.addData("lr power:", lr.getPower());
+        telemetry.addData("rr power:", rr.getPower());
 
-        telemetry.addData("left front encoder:", lf.getCurrentPosition());
-        telemetry.addData("right front encoder:", rf.getCurrentPosition());
-        telemetry.addData("left rear encoder:", lr.getCurrentPosition());
-        telemetry.addData("right rear encoder:", rr.getCurrentPosition());
+        telemetry.addData("lf encoder:", lf.getCurrentPosition());
+        telemetry.addData("rf encoder:", rf.getCurrentPosition());
+        telemetry.addData("lr encoder:", lr.getCurrentPosition());
+        telemetry.addData("rr encoder:", rr.getCurrentPosition());
     }
 }
